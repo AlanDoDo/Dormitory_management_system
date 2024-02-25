@@ -1,0 +1,18 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.itmk.web.school_major.mapper.SchoolMajorMapper">
+    <select id="getList" resultType="com.itmk.web.school_major.entity.SchoolMajor">
+        select sm.*,sc.collage_name from school_major as sm
+        left join school_collage as sc
+        on sm.collage_id = sc.collage_id
+        where 1=1
+        <if test="parm.majorName !=null and parm.majorName !=''">
+            and sm.major_name like concat('%',#{parm.majorName},'%')
+        </if>
+        <if test="parm.collageName !=null and parm.collageName !=''">
+            and sc.collage_name like concat('%',#{parm.collageName},'%')
+        </if>
+    </select>
+</mapper>

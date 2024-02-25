@@ -1,5 +1,5 @@
-import { login, logout, getInfo } from '@/api/user'
-import { getToken, setToken, removeToken } from '@/utils/auth'
+import { login, logout, getInfo,loginApi } from '@/api/user'
+import { getToken, setToken, removeToken,setUserId ,setUserType,getUserId,getUserType,clearSession} from '@/utils/auth'
 import { resetRouter } from '@/router'
 
 const getDefaultState = () => {
@@ -34,12 +34,20 @@ const mutations = {
 const actions = {
   // user login
   login({ commit }, userInfo) {
-    const { username, password } = userInfo
+    const { username, password ,userType,code} = userInfo
     return new Promise((resolve, reject) => {
-      login({ username: username.trim(), password: password }).then(response => {
+      loginApi({ username: username.trim(), password: password ,userType:userType,code:code}).then(response => {
         const { data } = response
+        console.log(data)
+        // commit('SET_TOKEN', data.token)
+        //采用的是mock的数据，目的是进入首页
+        // commit('SET_TOKEN', 'admin-token')
         commit('SET_TOKEN', data.token)
         setToken(data.token)
+        //设置用户id
+        setUserId(data.userId)
+        //设置用户类型
+        setUserType(data.userType)
         resolve()
       }).catch(error => {
         reject(error)
@@ -50,9 +58,10 @@ const actions = {
   // get user info
   getInfo({ commit, state }) {
     return new Promise((resolve, reject) => {
-      getInfo(state.token).then(response => {
+      getInfo({userId:getUserId(),userType:getUserType()}).then(response => {
         const { data } = response
-
+        console.log('获取用户信息')
+        console.log(response)
         if (!data) {
           reject('Verification failed, please Login again.')
         }
@@ -66,7 +75,7 @@ const actions = {
 
         commit('SET_ROLES', roles)
         commit('SET_NAME', name)
-        commit('SET_AVATAR', avatar)
+        commit('SET_AVATAR', require('@/assets/images/login_bg.png'))
         resolve(data)
       }).catch(error => {
         reject(error)
@@ -75,12 +84,15 @@ const actions = {
   },
 
   // user logout
-  logout({ commit, state }) {
+  logout({ commit, state,dispatch }) {
     return new Promise((resolve, reject) => {
       logout(state.token).then(() => {
         removeToken() // must remove  token  first
         resetRouter()
         commit('RESET_STATE')
+        //清空tagsview里面的数据
+        dispatch('tagsView/delAllViews', {}, { root: true })
+        clearSession()
         resolve()
       }).catch(error => {
         reject(error)

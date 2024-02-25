@@ -1,0 +1,13 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.itmk.web.apply_change.mapper.ApplyChangeMapper">
+    <select id="getStuInfo" resultType="com.itmk.web.apply_change.entity.StuInfoVo">
+        select sb.stu_id,drb.bed_id,drb.bed_code,st.stu_name from select_bed as sb
+        inner join drom_room_bed as drb on drb.bed_id = sb.bed_id
+        inner join school_student as st on st.stu_id = sb.stu_id
+        where sb.stu_id =#{stuId}
+
+    </select>
+</mapper>

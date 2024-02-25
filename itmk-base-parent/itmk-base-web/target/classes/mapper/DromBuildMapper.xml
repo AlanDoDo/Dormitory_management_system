@@ -1,0 +1,14 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.itmk.web.drom_build.mapper.DromBuildMapper">
+    <select id="getListBuild" resultType="com.itmk.web.drom_build.entity.BuildVo">
+        select db.build_name,count(sb.stu_id) as stu_count from drom_build as db
+        inner join drom_storey as ds on ds.build_id = db.build_id
+        inner join dorm_room as dr on dr.storey_id = ds.storey_id
+        inner join drom_room_bed as drb on drb.room_id = dr.room_id
+        inner join select_bed as sb on sb.bed_id = drb.bed_id
+        GROUP BY db.build_id,db.build_name
+    </select>
+</mapper>

@@ -1,0 +1,21 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.itmk.web.select_bed.mapper.StuBedMapper">
+    <select id="getStuBedList" resultType="com.itmk.web.select_bed.entity.StuBedVo">
+        select sb.stu_id,sb.bed_id,dr.room_id,dr.room_code,dr.root_type,drb.bed_code,ds.storey_name,db.build_name,ss.stu_name,scs.class_name from select_bed as sb
+        inner join drom_room_bed as drb on drb.bed_id = sb.bed_id
+        inner join dorm_room as dr on dr.room_id = drb.room_id
+        inner join drom_storey as ds on ds.storey_id = dr.storey_id
+        inner join drom_build as db on db.build_id = ds.build_id
+        inner join school_student as ss on ss.stu_id = sb.stu_id
+        inner join school_class as scs on scs.class_id = ss.class_id
+        where sb.stu_id =#{stuId}
+    </select>
+    <select id="getStuList" resultType="com.itmk.web.select_bed.entity.ChangeStu">
+        select st.stu_id,st.stu_name from select_bed as sb
+        inner join school_student as st on st.stu_id= sb.stu_id
+        where st.class_id =#{classId}
+    </select>
+</mapper>

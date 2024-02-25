@@ -1,0 +1,43 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.itmk.web.school_class.mapper.SchoolClassMapper">
+    <select id="getSchoolClassById" resultType="com.itmk.web.school_class.entity.SchoolClass">
+        SELECT sc.* ,scc.collage_id FROM  school_class as sc
+        left join school_major as sm  on sm.major_id = sc.major_id
+        left join school_collage as scc on scc.collage_id = sm.collage_id
+        where  sc.class_id =#{classId}
+    </select>
+
+    <select id="getList" resultType="com.itmk.web.school_class.entity.SchoolClass">
+        SELECT sc.* ,scc.collage_name,sm.major_name FROM school_class as sc
+        left join school_major as sm on sm.major_id = sc.major_id
+        left join school_collage as scc on scc.collage_id = sm.collage_id
+        where 1=1
+        <if test="parm.className != null and parm.className !=''">
+            and sc.class_name like concat('%',#{parm.className},'%')
+        </if>
+        <if test="parm.majorName != null and parm.majorName !=''">
+            and sm.major_name like concat('%',#{parm.majorName},'%')
+        </if>
+        <if test="parm.collageName != null and parm.collageName !=''">
+            and scc.collage_name like concat('%',#{parm.collageName},'%')
+        </if>
+    </select>
+
+    <select id="getAssignClass" resultType="com.itmk.web.school_class.entity.AssignClass">
+        select sc.*,count(ss.class_id) as stu_count,sum(case when ss.sex ='0' then 1 else 0 end) as man_count,sum(case
+        when ss.sex = '1' then 1 else 0 end) as girl_count from school_class as sc
+        left join school_student as ss
+        on sc.class_id = ss.class_id
+        where 1=1
+        <if test="parm.className !=null and parm.className !=''">
+            and sc.class_name like concat('%',#{parm.className},'%')
+        </if>
+        <if test="parm.classYear !=null and parm.classYear !=''">
+            and sc.class_year =#{parm.classYear}
+        </if>
+        GROUP BY sc.class_id
+    </select>
+</mapper>

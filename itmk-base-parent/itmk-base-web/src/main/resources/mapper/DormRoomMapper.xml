@@ -1,0 +1,15 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.itmk.web.dorm_room.mapper.DormRoomMapper">
+    <select id="getRoomTree" resultType="com.itmk.web.dorm_room.entity.RoomTree">
+        select t.room_id,dr.room_code from
+        (select a.* from drom_room_bed  as a
+        left join assign_bed  as b on a.bed_id = b.bed_id
+        where b.bed_id is null)t
+        left join dorm_room as dr on dr.room_id = t.room_id
+        where dr.storey_id =#{storeyId}
+        GROUP BY t.room_id,dr.room_code
+    </select>
+</mapper>

@@ -9,7 +9,7 @@
       size="medium"
     >
       <el-form-item style="margin-bottom:15px;">
-        <span class="loginTitle">高校宿舍管理系统</span>
+        <span class="loginTitle">智慧宿舍管理系统</span>
       </el-form-item>
       <el-form-item prop="username">
         <el-input

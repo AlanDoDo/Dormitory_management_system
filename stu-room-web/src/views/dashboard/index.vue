@@ -115,7 +115,7 @@ export default {
         yAxis: {},
         series: [
           {
-            name: "销量",
+            name: "人数",
             type: "bar",
             data: [],
           },

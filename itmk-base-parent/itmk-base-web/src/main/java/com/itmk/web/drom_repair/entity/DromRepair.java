@@ -8,8 +8,8 @@ import lombok.Data;
 import java.util.Date;
 
 /**
- * @Author java实战基地
- * @Version 3501754007
+ * @Author Alan
+ * @Version 001
  */
 @Data
 @TableName("drom_repair")

@@ -6,8 +6,8 @@ import com.itmk.web.drom_storey.entity.DromStorey;
 import java.util.List;
 
 /**
- * @Author java实战基地
- * @Version 3501754007
+ * @Author Alan
+ * @Version 001
  */
 public interface DromStoreyService extends IService<DromStorey> {
     //新增

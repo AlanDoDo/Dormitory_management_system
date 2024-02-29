@@ -7,8 +7,8 @@ import com.itmk.web.drom_into.service.DromIntoService;
 import org.springframework.stereotype.Service;
 
 /**
- * @Author java实战基地
- * @Version 3501754007
+ * @Author Alan
+ * @Version 001
  */
 @Service
 public class DromIntoServiceImpl extends ServiceImpl<DromIntoMapper, DromInto> implements DromIntoService {

@@ -6,8 +6,8 @@ import com.itmk.web.apply_change.entity.ApplyDoParm;
 import com.itmk.web.apply_change.entity.ApplyParm;
 
 /**
- * @Author java实战基地
- * @Version 3501754007
+ * @Author Alan
+ * @Version 001
  */
 public interface ApplyChangeService extends IService<ApplyChange> {
      void applySave(ApplyParm parm);

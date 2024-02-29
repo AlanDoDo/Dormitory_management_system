@@ -17,8 +17,8 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @Author java实战基地
- * @Version 3501754007
+ * @Author Alan
+ * @Version 001
  */
 @RestController
 @RequestMapping("/api/notice")

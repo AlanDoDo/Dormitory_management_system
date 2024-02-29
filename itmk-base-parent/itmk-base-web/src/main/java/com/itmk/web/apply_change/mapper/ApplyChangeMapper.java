@@ -6,8 +6,8 @@ import com.itmk.web.apply_change.entity.StuInfoVo;
 import org.apache.ibatis.annotations.Param;
 
 /**
- * @Author java实战基地
- * @Version 3501754007
+ * @Author Alan
+ * @Version 001
  */
 public interface ApplyChangeMapper extends BaseMapper<ApplyChange> {
     StuInfoVo getStuInfo(@Param("stuId") Long stuId);

@@ -4,8 +4,8 @@ import cn.afterturn.easypoi.excel.annotation.Excel;
 import lombok.Data;
 
 /**
- * @Author java实战基地
- * @Version 2383404558
+ * @Author Alan
+ * @Version 001
  */
 @Data
 public class StuExcel {

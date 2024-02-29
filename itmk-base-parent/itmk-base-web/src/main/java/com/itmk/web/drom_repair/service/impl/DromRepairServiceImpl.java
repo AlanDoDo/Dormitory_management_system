@@ -7,8 +7,8 @@ import com.itmk.web.drom_repair.service.DromRepairService;
 import org.springframework.stereotype.Service;
 
 /**
- * @Author java实战基地
- * @Version 3501754007
+ * @Author Alan
+ * @Version 001
  */
 @Service
 public class DromRepairServiceImpl extends ServiceImpl<DromRepairMapper, DromRepair> implements DromRepairService {

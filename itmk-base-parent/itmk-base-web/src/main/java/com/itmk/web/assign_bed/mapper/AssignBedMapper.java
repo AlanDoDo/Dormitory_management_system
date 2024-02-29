@@ -7,8 +7,8 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * @Author java实战基地
- * @Version 3501754007
+ * @Author Alan
+ * @Version 001
  */
 public interface AssignBedMapper extends BaseMapper<AssignBed> {
      //根据班级id查询分配的宿舍

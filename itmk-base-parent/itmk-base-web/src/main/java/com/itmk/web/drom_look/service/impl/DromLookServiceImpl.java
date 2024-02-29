@@ -7,8 +7,8 @@ import com.itmk.web.drom_look.service.DromLookService;
 import org.springframework.stereotype.Service;
 
 /**
- * @Author java实战基地
- * @Version 3501754007
+ * @Author Alan
+ * @Version 001
  */
 @Service
 public class DromLookServiceImpl extends ServiceImpl<DromLookMapper, DromLook> implements DromLookService {

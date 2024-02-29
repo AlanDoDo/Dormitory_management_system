@@ -7,8 +7,8 @@ import com.itmk.web.drom_leave.service.DromLeaveService;
 import org.springframework.stereotype.Service;
 
 /**
- * @Author java实战基地
- * @Version 3501754007
+ * @Author Alan
+ * @Version 001
  */
 @Service
 public class DromLeaveServiceImpl extends ServiceImpl<DromLeaveMapper, DromLeave> implements DromLeaveService {

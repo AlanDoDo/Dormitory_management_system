@@ -37,8 +37,8 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
- * @Author java实战基地
- * @Version 3501754007
+ * @Author Alan
+ * @Version 001
  */
 @RestController
 @RequestMapping("/api/login")

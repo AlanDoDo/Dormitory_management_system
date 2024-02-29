@@ -4,8 +4,8 @@ package com.itmk.utils;
 import org.apache.commons.lang.StringUtils;
 
 /**
- * @Author java实战基地
- * @Version 2383404558
+ * @Author Alan
+ * @Version 001
  */
 public class Utils {
     /**

@@ -7,8 +7,8 @@ import com.itmk.web.school_major.entity.SchoolMajor;
 import org.apache.ibatis.annotations.Param;
 
 /**
- * @Author java实战基地
- * @Version 3501754007
+ * @Author Alan
+ * @Version 001
  */
 public interface SchoolMajorMapper extends BaseMapper<SchoolMajor> {
     IPage<SchoolMajor> getList(IPage<SchoolMajor> page, @Param("parm")MajorList majorList);

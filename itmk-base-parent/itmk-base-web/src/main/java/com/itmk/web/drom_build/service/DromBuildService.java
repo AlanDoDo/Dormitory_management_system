@@ -5,8 +5,8 @@ import com.itmk.web.drom_build.entity.BuildEcharts;
 import com.itmk.web.drom_build.entity.DromBuild;
 
 /**
- * @Author java实战基地
- * @Version 3501754007
+ * @Author Alan
+ * @Version 001
  */
 public interface DromBuildService extends IService<DromBuild> {
     //新增

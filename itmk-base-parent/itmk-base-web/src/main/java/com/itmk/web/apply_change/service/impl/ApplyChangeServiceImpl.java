@@ -15,8 +15,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * @Author java实战基地
- * @Version 3501754007
+ * @Author Alan
+ * @Version 001
  */
 @Service
 public class ApplyChangeServiceImpl extends ServiceImpl<ApplyChangeMapper, ApplyChange> implements ApplyChangeService {

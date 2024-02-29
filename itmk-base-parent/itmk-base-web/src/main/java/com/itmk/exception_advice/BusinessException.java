@@ -1,8 +1,8 @@
 package com.itmk.exception_advice;
 
 /**
- * @Author java实战基地
- * @Version 3501754007
+ * @Author Alan
+ * @Version 001
  */
 
 public class BusinessException extends RuntimeException {

@@ -7,8 +7,8 @@ import com.itmk.web.sys_notice.service.SysNoticeService;
 import org.springframework.stereotype.Service;
 
 /**
- * @Author java实战基地
- * @Version 3501754007
+ * @Author Alan
+ * @Version 001
  */
 @Service
 public class SysNoticeServiceImpl extends ServiceImpl<SysNoticeMapper, SysNotice> implements SysNoticeService {

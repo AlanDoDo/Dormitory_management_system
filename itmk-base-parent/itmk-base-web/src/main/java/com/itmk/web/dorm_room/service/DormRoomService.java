@@ -7,8 +7,8 @@ import com.itmk.web.dorm_room.entity.RoomTree;
 import java.util.List;
 
 /**
- * @Author java实战基地
- * @Version 3501754007
+ * @Author Alan
+ * @Version 001
  */
 public interface DormRoomService extends IService<DormRoom> {
      List<RoomTree> getRoomTree(Long storeyId);

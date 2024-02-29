@@ -7,8 +7,8 @@ import com.itmk.web.drom_room_bed.entity.DromRoomVo;
 import java.util.List;
 
 /**
- * @Author java实战基地
- * @Version 3501754007
+ * @Author Alan
+ * @Version 001
  */
 public interface DromRoomBedService extends IService<DromRoomBed> {
      List<DromRoomBed> getBedList(Long roomId);

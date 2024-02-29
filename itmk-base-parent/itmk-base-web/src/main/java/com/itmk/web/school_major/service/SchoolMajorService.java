@@ -7,8 +7,8 @@ import com.itmk.web.school_major.entity.SchoolMajor;
 
 
 /**
- * @Author java实战基地
- * @Version 3501754007
+ * @Author Alan
+ * @Version 001
  */
 public interface SchoolMajorService extends IService<SchoolMajor> {
     IPage<SchoolMajor> getList(MajorList majorList);

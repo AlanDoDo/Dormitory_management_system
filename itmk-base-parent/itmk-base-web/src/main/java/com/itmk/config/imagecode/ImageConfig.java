@@ -1,8 +1,8 @@
 package com.itmk.config.imagecode;
 
 /**
- * @Author java实战基地
- * @Version 2383404558
+ * @Author Alan
+ * @Version 001
  */
 
 import com.google.code.kaptcha.Constants;

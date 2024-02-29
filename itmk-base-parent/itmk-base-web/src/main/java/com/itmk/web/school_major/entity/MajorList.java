@@ -3,8 +3,8 @@ package com.itmk.web.school_major.entity;
 import lombok.Data;
 
 /**
- * @Author java实战基地
- * @Version 3501754007
+ * @Author Alan
+ * @Version 001
  */
 @Data
 public class MajorList {

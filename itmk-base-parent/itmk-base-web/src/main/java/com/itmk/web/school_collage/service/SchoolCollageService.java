@@ -4,8 +4,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.itmk.web.school_collage.entity.SchoolCollage;
 
 /**
- * @Author java实战基地
- * @Version 3501754007
+ * @Author Alan
+ * @Version 001
  */
 public interface SchoolCollageService extends IService<SchoolCollage> {
 }

@@ -7,8 +7,8 @@ import com.itmk.web.school_collage.service.SchoolCollageService;
 import org.springframework.stereotype.Service;
 
 /**
- * @Author java实战基地
- * @Version 3501754007
+ * @Author Alan
+ * @Version 001
  */
 @Service
 public class SchoolCollageServiceImpl extends ServiceImpl<SchoolCollageMapper, SchoolCollage> implements SchoolCollageService {

@@ -7,8 +7,8 @@ import com.itmk.web.drom_build.entity.DromBuild;
 import java.util.List;
 
 /**
- * @Author java实战基地
- * @Version 3501754007
+ * @Author Alan
+ * @Version 001
  */
 public interface DromBuildMapper extends BaseMapper<DromBuild> {
     List<BuildVo> getListBuild();
